@@ -1,0 +1,12 @@
+### OSX ###
+.DS_Store
+
+### C/C++ ###
+*.out
+
+### Java ###
+*.class
+
+### JetBrains ###
+.idea/
+
