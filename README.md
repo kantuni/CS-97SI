@@ -1,5 +1,5 @@
 # Solutions to [PKU Online Judge](http://poj.org/) Problems
-## Problems solved: `4`
+## Problems solved: `5`
 
 <br>
 
