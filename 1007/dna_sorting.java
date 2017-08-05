@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -20,17 +21,25 @@ class Main {
     int n = scanner.nextInt();
     int m = scanner.nextInt();
     
-    Map<Integer, String> map = new TreeMap<Integer, String>();
+    Map<Integer, ArrayList<String>> map = new TreeMap<Integer, ArrayList<String>>();
     String[] s = new String[m];
     
     for (int i = 0; i < m; ++i) {
       s[i] = scanner.next();
       int points = sortedness(s[i]);
-      map.put(points, s[i]);
+      
+      ArrayList<String> listOfSequences = map.get(points);
+      if (listOfSequences == null) {
+        listOfSequences = new ArrayList<String>();
+        map.put(points, listOfSequences);
+      }
+      listOfSequences.add(s[i]);
     }
     
     for (Integer key: map.keySet()) {
-      System.out.println(map.get(key));
+      for (String sequence: map.get(key)) {
+        System.out.println(sequence);
+      }
     }
   }
 }
