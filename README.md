@@ -7,3 +7,4 @@
 - [1004](https://github.com/kantuni/POJ/tree/master/1004) - Financial Management - **Accepted**
 - [1003](https://github.com/kantuni/POJ/tree/master/1003) - Hangover - **Accepted**
 - [1007](https://github.com/kantuni/POJ/tree/master/1007) - DNA Sorting - **Accepted**
+- [2136](https://github.com/kantuni/POJ/tree/master/2136) - Vertical Histogram - **Accepted**
