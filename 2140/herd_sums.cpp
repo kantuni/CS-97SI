@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
 
-typedef unsigned long long ull;
+typedef long long ll;
 
 int main() {
-  ull N;
+  ll N;
   cin >> N;
   
-  int counter = 1;
-  for (int i = 2; i <= (N + 1) / 2; ++i) {
-    // solution to x + (x + 1) + (x + 2) ... = N
-    int numerator = 2 * N - i * (i - 1);
-    int denominator = 2 * i;
-    if (numerator != 0 && numerator % denominator == 0) {
+  ll counter = 1;
+  for (ll i = 2; i < N; ++i) {
+    // solution to x + (x + 1) + (x + 2) ... = N, where x > 0
+    ll numerator = 2 * N - i * (i - 1);
+    ll denominator = 2 * i;
+    if (numerator > 0 && numerator % denominator == 0) {
       ++counter;
     }
   }
