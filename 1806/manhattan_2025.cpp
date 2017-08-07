@@ -17,27 +17,25 @@ void draw(vvc &grid, int current) {
   
   for (int i = 0; i < grid.size() - 1; ++i) {
     for (int j = 0; j < grid[i].size() - 1; ++j) {
-      int diff = center - current + 2;
-      if (grid[i][j] == '0' + diff) {
+      int last = center + current - 2;
+      if (grid[i][j] == '0' + last) {
         // update n, e, s, w
-        if (grid[i + 1][j] == '.') grid[i + 1][j] = '0' + (diff - 1);
-        if (grid[i][j + 1] == '.') grid[i][j + 1] = '0' + (diff - 1);
-        if (grid[i - 1][j] == '.') grid[i - 1][j] = '0' + (diff - 1);
-        if (grid[i][j - 1] == '.') grid[i][j - 1] = '0' + (diff - 1);
+        if (grid[i + 1][j] == '.') grid[i + 1][j] = '0' + (last + 1);
+        if (grid[i][j + 1] == '.') grid[i][j + 1] = '0' + (last + 1);
+        if (grid[i - 1][j] == '.') grid[i - 1][j] = '0' + (last + 1);
+        if (grid[i][j - 1] == '.') grid[i][j - 1] = '0' + (last + 1);
       }
     }
   }
 }
 
-void print(vvc grid, int petrol, bool zero = false) {
+void print(vvc grid, int diff) {
   for (int i = 0; i < grid.size(); ++i) {
     for (int j = 0; j < grid[i].size(); ++j) {
-      // print with reverse petrol order
+      // subtract the difference
       if (grid[i][j] != '.') {
         int value = grid[i][j] - '0';
-        value = petrol + 1 - value;
-        if (zero) --value;
-        grid[i][j] = value + '0';
+        grid[i][j] = (value - diff) + '0';
       }
       cout << grid[i][j];
     }
@@ -75,17 +73,17 @@ int main() {
     // print the first ones
     for (int j = 0; j < slices.size() - 1; ++j) {
       cout << "slice #" << j + 1 << ":\n";
-      print(slices[j], u);
+      print(slices[j], j);
     }
     
     // print the central one in petrol reverse order
     cout << "slice #" << slices.size() << ":\n";
-    print(slices[slices.size() - 1], u, true);
+    print(slices[slices.size() - 1], u);
     
     // print the last ones
     for (int j = slices.size() - 2; j >= 0; --j) {
       cout << "slice #" << 2 * slices.size() - j - 1 << ":\n";
-      print(slices[j], u);
+      print(slices[j], j);
     }
     
     cout << "\n";
