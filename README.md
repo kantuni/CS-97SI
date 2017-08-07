@@ -1,5 +1,5 @@
 # Solutions to [PKU Online Judge](http://poj.org/) Problems
-## Problems solved: `7`
+## Problems solved: `8`
 
 <br>
 
@@ -10,4 +10,4 @@
 - [2136](https://github.com/kantuni/POJ/tree/master/2136) - Vertical Histogram - **Accepted**
 - [2140](https://github.com/kantuni/POJ/tree/master/2140) - Herd Sums - **Accepted**
 - [1504](https://github.com/kantuni/POJ/tree/master/1504) - Adding Reversed Numbers - **Accepted**
-- [1806](https://github.com/kantuni/POJ/tree/master/1806) - Manhattan 2025 - **Wrong answer**
+- [1806](https://github.com/kantuni/POJ/tree/master/1806) - Manhattan 2025 - **Accepted**
