@@ -76,7 +76,7 @@ int main() {
       print(slices[j], j);
     }
     
-    // print the central one in petrol reverse order
+    // print the central one
     cout << "slice #" << slices.size() << ":\n";
     print(slices[slices.size() - 1], u);
     
