@@ -128,11 +128,9 @@ string fmul(string a, string b) {
   result = imul(a, b);
   
   // put the separator in the right place
-  if (separator > result.size()) {
-    cout << "Ouch" << "\n";
-  } else if (separator == result.size()) {
+  if (separator == result.size()) {
     result = "0." + result;
-  } else {
+  } else if (separator < result.size()) {
     string temp = result.substr(0, result.size() - separator);
     temp += '.';
     temp += result.substr(result.size() - separator, result.size());
@@ -147,11 +145,15 @@ string fmul(string a, string b) {
  */
 
 string fpow(string x, int y) {
-  string xy = x;
-  for (int i = 1; i < y; ++i) {
-    xy = fmul(xy, x);
+  if (y == 1) {
+    return x;
   }
-  return xy;
+  
+  if (y % 2 == 0) {
+    return fpow(fmul(x, x), y / 2);
+  } else {
+    return fmul(x, fpow(x, y - 1));
+  }
 }
 
 
