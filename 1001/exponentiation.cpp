@@ -1,7 +1,18 @@
 #include <iostream>
-#include <iomanip>
+#include <sstream>
 #include <algorithm>
 using namespace std;
+
+template <typename T>
+string to_string(const T& value) {
+  stringstream ss;
+  ss << value;
+  return ss.str();
+}
+
+/*
+ * Integer arithmetic: addition
+ */
 
 string iadd(string a, string b) {
   if (b.size() > a.size()) {
@@ -22,19 +33,31 @@ string iadd(string a, string b) {
     int x = a[i] - '0';
     int y = b[i] - '0';
     int sum = x + y + carry;
+    carry = 0;
     
-    if (sum > 10 && i != 1) {
-      carry = 1;
+    if (sum > 9 && i != 0) {
+      carry = sum / 10;
       sum %= 10;
     }
     
-    result += to_string(sum);
+    if (i == 0) {
+      string ssum = to_string(sum);
+      reverse(ssum.begin(), ssum.end());
+      result += ssum;
+    } else {
+      result += to_string(sum);
+    }
   }
   
   reverse(result.begin(), result.end());
   return result;
 }
 
+
+/*
+ * Integer arithmetic: multiplication
+ */
+ 
 string imul(string a, string b) {
   if (b.size() > a.size()) {
     return imul(b, a);
@@ -42,22 +65,48 @@ string imul(string a, string b) {
   
   string result = "0";
   for (int i = b.size() - 1; i >= 0; --i) {
-    string temp = "0";
+    string temp;
+    int carry = 0;
+    
     for (int j = a.size() - 1; j >= 0; --j) {
       int x = b[i] - '0';
       int y = a[j] - '0';
       int mult = x * y + carry;
-      // TODO: continue here
+      carry = 0;
       
+      if (mult > 9 && j != 0) {
+        carry = mult / 10;
+        mult %= 10;
+      }
+      
+      if (j == 0) {
+        string smult = to_string(mult);
+        reverse(smult.begin(), smult.end());
+        temp += smult;
+      } else {
+        temp += to_string(mult);
+      }
     }
+    reverse(temp.begin(), temp.end());
+    for (int k = 0; k < b.size() - 1 - i; ++k) {
+      temp += "0";
+    }
+    result = iadd(result, temp);
   }
+  
+  return result;
 }
 
+
+/*
+ * Floating-point arithmetic: multiplication
+ */
+ 
 string fmul(string a, string b) {
   string result;
   int separator = 0;
   
-  // find the place for the separator, and remove .s
+  // find the separator and remove it
   for (int i = a.size() - 1; i >= 0; --i) {
     if (a[i] == '.') {
       a = a.substr(0, i) + a.substr(i + 1, a.size());
@@ -66,6 +115,7 @@ string fmul(string a, string b) {
     ++separator;
   }
   
+  // find the separator and remove it
   for (int i = b.size() - 1; i >= 0; --i) {
     if (b[i] == '.') {
       b = b.substr(0, i) + b.substr(i + 1, b.size());
@@ -74,13 +124,13 @@ string fmul(string a, string b) {
     ++separator;
   }
   
-  // TODO: 0.05 case (remove leading zeroes)
-  
   // ... now just multiply two integers
   result = imul(a, b);
   
   // put the separator in the right place
   if (separator > result.size()) {
+    cout << "Ouch" << "\n";
+  } else if (separator == result.size()) {
     result = "0." + result;
   } else {
     string temp = result.substr(0, result.size() - separator);
@@ -92,6 +142,10 @@ string fmul(string a, string b) {
   return result;
 }
 
+/*
+ * Floating-point arithmetic: power function
+ */
+
 string fpow(string x, int y) {
   string xy = x;
   for (int i = 1; i < y; ++i) {
@@ -99,6 +153,7 @@ string fpow(string x, int y) {
   }
   return xy;
 }
+
 
 void print(string s) {
   // leading zeros should be suppressed
@@ -131,14 +186,10 @@ int main() {
   string r;
   int n;
   
-  cout << imul("412", "86") << "\n";
-  
-  /*
   while (cin >> r >> n) {
     string rn = fpow(r, n);
     print(rn);
   }
-  */
   
   return 0;
 }
