@@ -1,26 +1,26 @@
 #include <iostream>
+#include <cmath>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
 struct Rider {
-  double v, t0;
+  double v;
+  int t0;
 };
 
-Rider first;
-
-bool sort_by_time(const Rider &a, const Rider &b) {
+bool sort_by_set_off(Rider a, Rider b) {
   if (a.t0 == b.t0) {
     return a.v > b.v;
   }
   return a.t0 < b.t0;
 }
 
-bool sort_by_overtakes(const Rider &a, const Rider &b) {
-  // TODO: handle denominator = 0 case
-  double t1 = (a.v * a.t0) / (a.v - first.v);
-  double t2 = (b.v * b.t0) / (b.v - first.v);
-  return t1 < t2;
+Rider first;
+bool sort_by_catch_up(Rider a, Rider b) {
+  double at = (a.v * a.t0) / (a.v - first.v);
+  double bt = (b.v * b.t0) / (b.v - first.v);
+  return at < bt;
 }
 
 int main() {
@@ -32,35 +32,50 @@ int main() {
       break;
     }
     
-    vector<Rider> info;
+    vector<Rider> riders;
     for (int i = 0; i < n; ++i) {
-      Rider temp;
-      cin >> temp.v >> temp.t0;
+      int vi, ti;
+      cin >> vi >> ti;
       
-      if (temp.t0 >= 0) {
-        temp.v = (temp.v * 1000) / 3600;
-        info.push_back(temp);
+      if (ti < 0) {
+        continue;
       }
+      
+      Rider r;
+      r.v = vi;
+      r.t0 = ti;
+      riders.push_back(r);
     }
     
     // sort by set off time
-    sort(info.begin(), info.end(), sort_by_time);
+    sort(riders.begin(), riders.end(), sort_by_set_off);
+    first = riders[0];
     
-    // find the first rider
-    first = info[0];
-    
-    // remove riders with 0 set off time
-    for (int i = 0; i < info.size(); ++i) {
-      if (info[i].t0 == 0) {
-        info.erase(info.begin() + i);
+    // remove riders that will never catch up
+    for (int i = 1; i < riders.size(); ++i) {
+      bool same_set_off = riders[i].t0 == first.t0;
+      bool lesser_speed = riders[i].v <= first.v;
+      if (same_set_off || lesser_speed) {
+        riders.erase(riders.begin() + i);
+        --i;
       }
     }
     
-    // sort by overtakes
-    sort(info.begin(), info.end(), sort_by_overtakes);
+    // remove the first rider
+    riders.erase(riders.begin());
     
-    for (int i = 0; i < info.size(); ++i) {
-      cout << info[i].v << ", " << info[i].t0 << "\n";
+    // sort by catch up time
+    sort(riders.begin(), riders.end(), sort_by_catch_up);
+    
+    Rider fastest = riders[0];
+    double catch_up_time = (fastest.v * fastest.t0) / (fastest.v - first.v);
+    double catch_up = catch_up_time * first.v / 3600.0;
+    
+    if (catch_up < 4.5) {
+      double until_finish = (4.5 - catch_up) * 3600 / fastest.v;
+      cout << ceil(catch_up_time + until_finish) << "\n";
+    } else {
+      cout << ceil(4.5 * 3600 / first.v) << "\n";
     }
   }
   
