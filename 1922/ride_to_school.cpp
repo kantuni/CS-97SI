@@ -52,11 +52,11 @@ int main() {
       }
     }
     
-    double seconds_so_far = 0.0;
-    double km_so_far = 0.0;
-    
     Rider prev = riders[0];
     int current = 0;
+    
+    double seconds_so_far = riders[0].t0;
+    double km_so_far = 0.0;
     
     while (km_so_far < 4.5 * 3600) {
       double tmin = DBL_MAX;
