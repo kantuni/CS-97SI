@@ -15,5 +15,5 @@
 ### Mathematics
 - [1799](https://github.com/kantuni/POJ/tree/master/1799) - Yeehaa! - **Accepted**
 
----
-Accepted: `11`
+
+**Accepted:** `11`
