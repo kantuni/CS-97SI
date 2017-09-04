@@ -1,5 +1,5 @@
 # Solutions to [PKU Online Judge](http://poj.org/) Problems
-## Problems solved: `9`
+## Problems solved: `10`
 
 <br>
 
@@ -12,3 +12,4 @@
 - [1504](https://github.com/kantuni/POJ/tree/master/1504) - Adding Reversed Numbers - **Accepted**
 - [1806](https://github.com/kantuni/POJ/tree/master/1806) - Manhattan 2025 - **Accepted**
 - [1001](https://github.com/kantuni/POJ/tree/master/1001) - Exponentiation - **Accepted**
+- [1922](https://github.com/kantuni/POJ/tree/master/1922) - Ride to School - **Accepted**
