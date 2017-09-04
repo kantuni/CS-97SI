@@ -14,7 +14,3 @@
 
 ### Mathematics
 - [1799](https://github.com/kantuni/POJ/tree/master/1799) - Yeehaa! - **Accepted**
-
-<br>
-
-**Accepted:** `11`
