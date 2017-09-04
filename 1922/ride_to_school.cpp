@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cfloat>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -14,13 +15,6 @@ bool sort_by_set_off(Rider a, Rider b) {
     return a.v > b.v;
   }
   return a.t0 < b.t0;
-}
-
-Rider first;
-bool sort_by_catch_up(Rider a, Rider b) {
-  double at = (a.v * a.t0) / (a.v - first.v);
-  double bt = (b.v * b.t0) / (b.v - first.v);
-  return at < bt;
 }
 
 int main() {
@@ -49,34 +43,45 @@ int main() {
     
     // sort by set off time
     sort(riders.begin(), riders.end(), sort_by_set_off);
-    first = riders[0];
     
-    // remove riders that will never catch up
+    // remove riders that have the same set off time (leave one)
     for (int i = 1; i < riders.size(); ++i) {
-      bool same_set_off = riders[i].t0 == first.t0;
-      bool lesser_speed = riders[i].v <= first.v;
-      if (same_set_off || lesser_speed) {
+      if (riders[i - 1].t0 == riders[i].t0) {
         riders.erase(riders.begin() + i);
         --i;
       }
     }
     
-    // remove the first rider
-    riders.erase(riders.begin());
+    double seconds_so_far = 0.0;
+    double km_so_far = 0.0;
     
-    // sort by catch up time
-    sort(riders.begin(), riders.end(), sort_by_catch_up);
+    Rider prev = riders[0];
+    int current = 0;
     
-    Rider fastest = riders[0];
-    double catch_up_time = (fastest.v * fastest.t0) / (fastest.v - first.v);
-    double catch_up = catch_up_time * first.v / 3600.0;
-    
-    if (catch_up < 4.5) {
-      double until_finish = (4.5 - catch_up) * 3600 / fastest.v;
-      cout << ceil(catch_up_time + until_finish) << "\n";
-    } else {
-      cout << ceil(4.5 * 3600 / first.v) << "\n";
+    while (km_so_far < 4.5 * 3600) {
+      double tmin = DBL_MAX;
+      for (int i = current + 1; i < riders.size(); ++i) {
+        double t = (riders[i].v * riders[i].t0 - prev.v * prev.t0) / (riders[i].v - prev.v);
+        if (t < tmin) {
+          tmin = t;
+          current = i;
+        }
+      }
+      
+      if (tmin * prev.v > 4.5 * 3600) {
+        break;
+      }
+      
+      km_so_far += (tmin - seconds_so_far) * prev.v;
+      seconds_so_far = tmin;
+      prev = riders[current];
     }
+    
+    if (km_so_far < 4.5 * 3600) {
+      seconds_so_far += (4.5 * 3600 - km_so_far) / prev.v;
+    }
+    
+    cout << ceil(seconds_so_far) << "\n";
   }
   
   return 0;
