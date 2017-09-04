@@ -16,4 +16,4 @@
 - [1799](https://github.com/kantuni/POJ/tree/master/1799) - Yeehaa! - **Accepted**
 
 ---
-## Problems solved: `11`
+## Accepted: `11`
