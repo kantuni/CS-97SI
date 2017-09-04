@@ -1,7 +1,4 @@
 # Solutions to [PKU Online Judge](http://poj.org/) Problems
-## Problems solved: `11`
-
-<br>
 
 ### Coding Exercise
 - [1000](https://github.com/kantuni/POJ/tree/master/1000) - A + B Problem - **Accepted**
@@ -17,3 +14,6 @@
 
 ### Mathematics
 - [1799](https://github.com/kantuni/POJ/tree/master/1799) - Yeehaa! - **Accepted**
+
+---
+## Problems solved: `11`
