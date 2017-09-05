@@ -15,6 +15,9 @@
 ### Mathematics
 - [1799](https://github.com/kantuni/POJ/tree/master/1799) - Yeehaa! - **Accepted**
 
+### Data Structures
+- [2418](https://github.com/kantuni/POJ/tree/master/2418) - Hardwood Species - **Accepted**
+
 <br>
 
-Problems solved: `11`
+Problems solved: `12`
