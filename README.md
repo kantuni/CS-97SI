@@ -18,6 +18,9 @@
 ### Data Structures
 - [2418](https://github.com/kantuni/POJ/tree/master/2418) - Hardwood Species - **Accepted**
 
+### Dynamic Programming
+- [2663](https://github.com/kantuni/POJ/tree/master/2663) - Tri Tiling - **Accepted**
+
 <br>
 
-Problems solved: `12`
+Problems solved: `13`
