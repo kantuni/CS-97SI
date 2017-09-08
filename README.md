@@ -21,6 +21,9 @@
 ### Dynamic Programming
 - [2663](https://github.com/kantuni/POJ/tree/master/2663) - Tri Tiling - **Accepted**
 
+### Combinatorial Games
+- [2234](https://github.com/kantuni/POJ/tree/master/2234) - Matches Game - **Accepted**
+
 <br>
 
-Problems solved: `13`
+Problems solved: `14`
