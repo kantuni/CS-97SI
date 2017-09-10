@@ -1,4 +1,4 @@
-# Solutions to [PKU Online Judge](http://poj.org/) Problems
+# [CS 97SI: Introduction to Competitive Programming Contests](http://web.stanford.edu/class/cs97si/) by Stanford University
 
 ### Coding Exercise
 - [1000](https://github.com/kantuni/POJ/tree/master/1000) - A + B Problem - **Accepted**
