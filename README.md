@@ -24,6 +24,9 @@
 ### Combinatorial Games
 - [2234](https://github.com/kantuni/POJ/tree/master/2234) - Matches Game - **Accepted**
 
+### Basic Graph Algorithms
+- [1308](https://github.com/kantuni/POJ/tree/master/1308) - Is It A Tree? - **Accepted**
+
 <br>
 
-Problems solved: `14`
+Problems solved: `15`
