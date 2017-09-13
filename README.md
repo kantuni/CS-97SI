@@ -27,6 +27,9 @@
 ### Basic Graph Algorithms
 - [1308](https://github.com/kantuni/POJ/tree/master/1308) - Is It A Tree? - **Accepted**
 
+### Shortest Path Algorithms
+- [1125](https://github.com/kantuni/POJ/tree/master/1125) - Stockbroker Grapevine - **Accepted**
+
 <br>
 
-Problems solved: `15`
+Problems solved: `16`
