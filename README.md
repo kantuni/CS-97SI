@@ -16,19 +16,19 @@
 - [1799](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/1799) - Yeehaa! - **Accepted**
 
 ### Data Structures
-- [2418](https://github.com/kantuni/CS-97SI/tree/master/2418) - Hardwood Species - **Accepted**
+- [2418](https://github.com/kantuni/CS-97SI/tree/master/Data%20Structures/2418) - Hardwood Species - **Accepted**
 
 ### Dynamic Programming
-- [2663](https://github.com/kantuni/CS-97SI/tree/master/2663) - Tri Tiling - **Accepted**
+- [2663](https://github.com/kantuni/CS-97SI/tree/master/Dynamic%20Programming/2663) - Tri Tiling - **Accepted**
 
 ### Combinatorial Games
-- [2234](https://github.com/kantuni/CS-97SI/tree/master/2234) - Matches Game - **Accepted**
+- [2234](https://github.com/kantuni/CS-97SI/tree/master/Combinatorial%20Games/2234) - Matches Game - **Accepted**
 
 ### Basic Graph Algorithms
-- [1308](https://github.com/kantuni/CS-97SI/tree/master/1308) - Is It A Tree? - **Accepted**
+- [1308](https://github.com/kantuni/CS-97SI/tree/master/Basic%20Graph%20Algorithms/1308) - Is It A Tree? - **Accepted**
 
 ### Shortest Path Algorithms
-- [1125](https://github.com/kantuni/CS-97SI/tree/master/1125) - Stockbroker Grapevine - **Accepted**
+- [1125](https://github.com/kantuni/CS-97SI/tree/master/Shortest%20Path%20Algorithms/1125) - Stockbroker Grapevine - **Accepted**
 
 <br>
 
