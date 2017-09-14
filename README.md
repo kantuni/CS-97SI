@@ -13,7 +13,7 @@
 - [1922](https://github.com/kantuni/CS-97SI/tree/master/Coding%20Exercise/1922) - Ride to School - **Accepted**
 
 ### Mathematics
-- [1799](https://github.com/kantuni/CS-97SI/tree/master/1799) - Yeehaa! - **Accepted**
+- [1799](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/1799) - Yeehaa! - **Accepted**
 
 ### Data Structures
 - [2418](https://github.com/kantuni/CS-97SI/tree/master/2418) - Hardwood Species - **Accepted**
