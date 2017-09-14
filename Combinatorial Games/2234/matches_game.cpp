@@ -15,7 +15,6 @@ int main() {
     
     istringstream iss(line);
     ull m;
-    
     iss >> m;
     
     ull nimsum = 0;

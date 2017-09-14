@@ -17,6 +17,7 @@ int main() {
       break;
     }
     
+    // create the adjacency matrix
     vvi D;
     for (int i = 0; i < n; ++i) {
       vi row(n, INF);
@@ -24,6 +25,7 @@ int main() {
       D[i][i] = 0;
     }
 
+    // read input data
     for (int i = 0; i < n; ++i) {
       int m;
       cin >> m;
@@ -44,6 +46,7 @@ int main() {
       }
     }
     
+    // check if all nodes are reachable at least from one node
     bool reachable = true;
     int s, sc = 0;
     
@@ -79,6 +82,8 @@ int main() {
       continue;
     }
     
+    // find the fastest stockbroker and the time it takes
+    // to spread the news to all his contractors
     int stockbroker;
     int min = INF;
     
@@ -90,6 +95,7 @@ int main() {
       }
     }
     
+    // output the answer
     cout << stockbroker + 1 << " " << min << "\n";
   }
   
