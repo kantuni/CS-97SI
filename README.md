@@ -33,6 +33,9 @@
 ### Network Flow Problems
 - [1273](https://github.com/kantuni/CS-97SI/tree/master/Network%20Flow%20Problems/1273) - Drainage Ditches - **Runtime error**
 
+### String Algorithms
+- [1936](https://github.com/kantuni/CS-97SI/tree/master/String%20Algorithms/1936) - All in All - **Accepted**
+
 <br>
 
 Problems solved: `16`
