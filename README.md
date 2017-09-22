@@ -20,6 +20,7 @@
 
 ### Dynamic Programming
 - [2663](https://github.com/kantuni/CS-97SI/tree/master/Dynamic%20Programming/2663) - Tri Tiling - **Accepted**
+- [1163](https://github.com/kantuni/CS-97SI/tree/master/Dynamic%20Programming/1163) - The Triangle - **Accepted**
 
 ### Combinatorial Games
 - [2234](https://github.com/kantuni/CS-97SI/tree/master/Combinatorial%20Games/2234) - Matches Game - **Accepted**
