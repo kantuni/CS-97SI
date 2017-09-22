@@ -3,7 +3,6 @@
 #include <sstream>
 #include <vector>
 #include <deque>
-#include <algorithm>
 using namespace std;
 
 #define INF (int) 1e9
@@ -37,6 +36,7 @@ int main() {
       cin >> si >> ei >> ci;
       G[si - 1][ei - 1] = ci;
       
+      // default value for back edges
       if (G[ei - 1][si - 1] == INF) {
         G[ei - 1][si - 1] = 0;
       }
@@ -75,6 +75,7 @@ int main() {
         break;
       }
       
+      // there is a flow from the pond to the steam
       if (s.front() == m - 1) {
         ull f = INF;
         for (int i = 0; i < s.size() - 1; ++i) {
