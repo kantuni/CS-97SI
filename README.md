@@ -32,11 +32,11 @@
 - [1125](https://github.com/kantuni/CS-97SI/tree/master/Shortest%20Path%20Algorithms/1125) - Stockbroker Grapevine - **Accepted**
 
 ### Network Flow Problems
-- [1273](https://github.com/kantuni/CS-97SI/tree/master/Network%20Flow%20Problems/1273) - Drainage Ditches - **Runtime error**
+- [1273](https://github.com/kantuni/CS-97SI/tree/master/Network%20Flow%20Problems/1273) - Drainage Ditches - **Accepted**
 
 ### String Algorithms
 - [1936](https://github.com/kantuni/CS-97SI/tree/master/String%20Algorithms/1936) - All in All - **Accepted**
 
 <br>
 
-Problems solved: **18**
+Problems solved: **19**
