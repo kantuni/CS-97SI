@@ -34,7 +34,13 @@ int main() {
     for (int i = 0; i < n; ++i) {
       int si, ei, ci;
       cin >> si >> ei >> ci;
-      G[si - 1][ei - 1] = ci;
+      
+      // IMPORTANT: combine all flows from u -> v
+      if (G[si - 1][ei - 1] == INF) {
+        G[si - 1][ei - 1] = ci;
+      } else {
+        G[si - 1][ei - 1] += ci;
+      }
       
       // default value for back edges
       if (G[ei - 1][si - 1] == INF) {
