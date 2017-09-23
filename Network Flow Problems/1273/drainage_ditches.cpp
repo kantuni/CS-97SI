@@ -75,7 +75,7 @@ int main() {
         break;
       }
       
-      // there is a flow from the pond to the steam
+      // there is a flow from the pond to the stream
       if (s.front() == m - 1) {
         ull f = INF;
         for (int i = 0; i < s.size() - 1; ++i) {
@@ -89,7 +89,7 @@ int main() {
         
         max_flow += f;
         
-        while (!s.empty()) {
+        while (s.size() > 1) {
           int u = s.front();
           s.pop_front();
           int v = s.front();
