@@ -18,6 +18,7 @@
 
 ### Data Structures
 - [2418](https://github.com/kantuni/CS-97SI/tree/master/Data%20Structures/2418) - Hardwood Species - **Accepted**
+- [1330](https://github.com/kantuni/CS-97SI/tree/master/Data%20Structures/1330) - Nearest Common Ancestors - **Accepted**
 
 ### Dynamic Programming
 - [2663](https://github.com/kantuni/CS-97SI/tree/master/Dynamic%20Programming/2663) - Tri Tiling - **Accepted**
@@ -43,4 +44,4 @@
 
 <br>
 
-Problems solved: **21**
+Problems solved: **22**
