@@ -1,11 +1,15 @@
-### OSX ###
+# OSX
 .DS_Store
 
-### C/C++ ###
+# C/C++
 *.out
 
-### Java ###
+# Java
 *.class
 
-### JetBrains ###
+# JetBrains
 .idea/
+
+# Tests 
+input.txt
+output.txt
