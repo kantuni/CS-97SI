@@ -9,19 +9,19 @@ int main() {
   int N;
   cin >> N;
   
-  vvi F;
+  vvi M(N);
   for (int i = 0; i < N; i++) {
     vi row(N);
-    F.push_back(row);
+    M[i] = row;
   }
   
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
       char c;
       cin >> c;
-      if (c == 'J') F[i][j] = 1;
-      else if (c == 'B') F[i][j] = -1;
-      else F[i][j] = 0;
+      if (c == 'J') M[i][j] = 1;
+      else if (c == 'B') M[i][j] = -1;
+      else M[i][j] = 0;
     }
   }
   
@@ -30,19 +30,19 @@ int main() {
   // normal
   for (int i = 0; i < N - 1; i++) {
     for (int j = 0; j < N - 1; j++) {
-      int A = F[i][j];
+      int A = M[i][j];
       for (int k = j + 1; k < N; k++) {
         if (i + k - j < N) {
-          int B = F[i][k];
-          int C = F[i + k - j][j];
-          int D = F[i + k - j][k];
+          int B = M[i][k];
+          int C = M[i + k - j][j];
+          int D = M[i + k - j][k];
           
           // none or only one *
           if (A + B + C + D >= 3) {
             int area = (k - j) * (k - j);
             max = area > max ? area : max;
           }
-        } 
+        }
       }
     }
   }
@@ -50,16 +50,16 @@ int main() {
   // diagonal
   for (int i = 0; i < N - 1; i++) {
     for (int j = 1; j < N - 1; j++) {
-      int A = F[i][j];
+      int A = M[i][j];
       for (int k = 1; k <= (N - 1) / 2; k++) {
         bool ok = (i + k < N) && (i + 2 * k < N);
         ok = ok && (j - k >= 0) && (j + k < N);
 
         if (ok) {
-          // F[i + k][j] is a center
-          int B = F[i + k][j - k];
-          int C = F[i + k][j + k];
-          int D = F[i + 2 * k][j];
+          // M[i + k][j] is a center
+          int B = M[i + k][j - k];
+          int C = M[i + k][j + k];
+          int D = M[i + 2 * k][j];
           
           // none or only one *
           if (A + B + C + D >= 3) {
