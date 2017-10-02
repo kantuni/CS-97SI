@@ -15,6 +15,7 @@
 ### Mathematics
 - [1799](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/1799) - Yeehaa! - **Accepted**
 - [1401](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/1401) - Factorial - **Accepted**
+- [2262](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/2262) - Goldbach's Conjecture - **Accepted**
 
 ### Data Structures
 - [2418](https://github.com/kantuni/CS-97SI/tree/master/Data%20Structures/2418) - Hardwood Species - **Accepted**
@@ -44,4 +45,4 @@
 
 <br>
 
-Problems solved: **22**
+Problems solved: **23**
