@@ -9,7 +9,7 @@ int main() {
   int N;
   cin >> N;
   
-  for (int i = 1; i <= N; ++i) {
+  for (int i = 1; i <= N; i++) {
     double R;
     int n;
     cin >> R >> n;
@@ -22,7 +22,7 @@ int main() {
     }
     
     double a = 360.0 / n;
-    double b = (180 - a) / 2;
+    double b = (180.0 - a) / 2;
     
     double r = R / (2 * sin(b * PI / 180) / sin(a * PI / 180) + 1);
     cout << "Scenario #" << i << ":" << "\n";
