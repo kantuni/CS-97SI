@@ -11,6 +11,7 @@
 - [1806](https://github.com/kantuni/CS-97SI/tree/master/Coding%20Exercise/1806) - Manhattan 2025 - **Accepted**
 - [1001](https://github.com/kantuni/CS-97SI/tree/master/Coding%20Exercise/1001) - Exponentiation - **Accepted**
 - [1922](https://github.com/kantuni/CS-97SI/tree/master/Coding%20Exercise/1922) - Ride to School - **Accepted**
+- [3251](https://github.com/kantuni/CS-97SI/tree/master/Coding%20Exercise/3251) - Big Square - **Wrong answer**
 
 ### Mathematics
 - [1799](https://github.com/kantuni/CS-97SI/tree/master/Mathematics/1799) - Yeehaa! - **Accepted**
