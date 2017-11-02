@@ -48,4 +48,4 @@
 
 <br>
 
-Problems solved: **23**
+Problems solved: **24**
