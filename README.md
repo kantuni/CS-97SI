@@ -31,6 +31,8 @@
 
 ### Basic Graph Algorithms
 - [1308](https://github.com/kantuni/CS-97SI/tree/master/Basic%20Graph%20Algorithms/1308) - Is It A Tree? - **Accepted**
+- [1258](https://github.com/kantuni/CS-97SI/tree/master/Basic%20Graph%20Algorithms/1258) - Agri-Net - **Accepted**
+- [2488](https://github.com/kantuni/CS-97SI/tree/master/Basic%20Graph%20Algorithms/2488) - A Knight's Journey - **Time limit exceeded**
 
 ### Shortest Path Algorithms
 - [1125](https://github.com/kantuni/CS-97SI/tree/master/Shortest%20Path%20Algorithms/1125) - Stockbroker Grapevine - **Accepted**
