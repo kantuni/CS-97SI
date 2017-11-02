@@ -11,5 +11,4 @@
 .idea/
 
 # Tests 
-input.txt
-output.txt
+*.txt
