@@ -1,104 +1,89 @@
 #include <iostream>
 #include <vector>
-#include <deque>
+#include <queue>
 using namespace std;
 
 typedef vector<int> vi;
 typedef vector<vi> vvi;
-
+#define UNVISITED -1
+#define VISITED 1
 #define INF 1e9
 
+vvi res, cnn;
+vi parent, color;
+int s, t, f;
+
+// augment along s -> t path
+void augment(int v, int minf) {
+  if (v == s) { f = minf; return; }
+  else if (parent[v] != -1) {
+    int u = parent[v];
+    augment(parent[v], min(minf, res[u][v]));
+    res[u][v] -= f; res[v][u] += f;
+  }
+}
+
 int main() {
-  int N, M;
-  cin >> N >> M;
+  int N, M; cin >> N >> M;
+  int V = N + M + 2;
   
-  const int L = N + M + 2;
-  vvi A;
-  for (int i = 0; i < L; ++i) {
-    vi row(L, INF);
-    A.push_back(row);
+  // keep both adjacency matrix and 
+  // adjacency list for O(VE^2) max flow
+  s = 0; t = V - 1;
+  res.assign(V, vi(V));
+  cnn.assign(V, vi());
+  
+  // super source
+  for (int i = 1; i <= N; i++) {
+    res[s][i] = 1; cnn[s].push_back(i);
+    res[i][s] = 0; cnn[i].push_back(s);
   }
   
-  // source
-  for (int i = 1; i < N + 1; ++i) {
-    A[0][i] = 1;
-    A[i][0] = 0;
+  // super sink
+  for (int i = N + 1; i <= N + M; i++) {
+    res[i][t] = 1; cnn[i].push_back(t);
+    res[t][i] = 0; cnn[t].push_back(i);
   }
   
-  // target
-  for (int i = N + 1; i < N + M + 1; ++i) {
-    A[i][L - 1] = 1;
-    A[L - 1][i] = 0;
-  }
-  
-  for (int i = 1; i < N + 1; ++i) {
-    int s;
-    cin >> s;
-    
-    for (int j = 0; j < s; ++j) {
-      int sj;
-      cin >> sj;
-      A[i][N + sj] = 1;
-      A[N + sj][i] = 0;
+  // in
+  for (int i = 1; i <= N; i++) {
+    int si; cin >> si;
+    for (int j = 0; j < si; j++) {
+      int sj; cin >> sj;
+      res[i][N + sj] = 1; cnn[i].push_back(N + sj);
+      res[N + sj][i] = 0; cnn[N + sj].push_back(i);
     }
   }
   
-  // Ford-Fulkerson
-  int max_flow = 0;
-  
+  // Edmonds-Karp's Algorithm
+  int mf = 0;
   while (true) {
-    vector<int> color(L, 0);
-    deque<int> s;
-    s.push_front(0);
-    color[0] = 1;
+    f = 0;
     
-    // DFS
-    while (!s.empty() && s.front() != L - 1) {
-      bool adjacent = false;
-      for (int i = 0; i < L; ++i) {
-        if (A[s.front()][i] != INF &&
-            A[s.front()][i] != 0 &&
-            color[i] == 0) {
-          adjacent = true;
-          color[i] = 1;
-          s.push_front(i);
-          break;
+    // BFS
+    color.assign(V, UNVISITED); color[s] = VISITED;
+    parent.assign(V, -1);
+    queue<int> q; q.push(s);
+    
+    while (!q.empty()) {
+      int u = q.front(); q.pop();
+      if (u == t) break;
+      for (int i = 0; i < cnn[u].size(); i++) {
+        int v = cnn[u][i];
+        if (res[u][v] > 0 && color[v] == UNVISITED) {
+          color[v] = VISITED;
+          parent[v] = u;
+          q.push(v);
         }
       }
-      
-      if (!adjacent) {
-        s.pop_front();
-      }
     }
     
-    if (s.empty()) {
-      break;
-    }
-    
-    if (s.front() == L - 1) {
-      int f = INF;
-      for (int i = 0; i < s.size() - 1; ++i) {
-        int u = s[i];
-        int v = s[i + 1];
-        
-        if (A[v][u] < f) {
-          f = A[v][u];
-        }
-      }
-      
-      max_flow += f;
-      
-      while (s.size() > 1) {
-        int u = s.front();
-        s.pop_front();
-        int v = s.front();
-        
-        A[v][u] -= f;
-        A[u][v] += f;
-      }
-    }
+    augment(t, INF);
+    if (f == 0) break;
+    mf += f;
   }
   
-  cout << max_flow << "\n";
+  // out
+  cout << mf << "\n";
   return 0;
 }
