@@ -37,6 +37,7 @@
 
 ### Shortest Path Algorithms
 - [1125](https://github.com/kantuni/CS-97SI/tree/master/Shortest%20Path%20Algorithms/1125) - Stockbroker Grapevine - **Accepted**
+- [1847](https://github.com/kantuni/CS-97SI/tree/master/Shortest%20Path%20Algorithms/1847) - Tram - **Accepted**
 
 ### Network Flow Problems
 - [1273](https://github.com/kantuni/CS-97SI/tree/master/Network%20Flow%20Problems/1273) - Drainage Ditches - **Accepted**
@@ -50,4 +51,4 @@
 
 <br>
 
-Problems solved: **24**
+Problems solved: **25**
