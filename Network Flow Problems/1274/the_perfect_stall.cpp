@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 #define UNVISITED -1
 #define VISITED 1
-#define INF 1e9
+#define INF (int) 1e9
 
 vvi res, cnn;
 vi parent, color;
