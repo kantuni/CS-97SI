@@ -15,8 +15,8 @@ void draw(vvc &grid, int current) {
     return;
   }
   
-  for (int i = 0; i < grid.size() - 1; ++i) {
-    for (int j = 0; j < grid[i].size() - 1; ++j) {
+  for (int i = 0; i < grid.size() - 1; i++) {
+    for (int j = 0; j < grid[i].size() - 1; j++) {
       int last = center + current - 2;
       if (grid[i][j] == '0' + last) {
         // update n, e, s, w
@@ -30,8 +30,8 @@ void draw(vvc &grid, int current) {
 }
 
 void print(vvc grid, int diff) {
-  for (int i = 0; i < grid.size(); ++i) {
-    for (int j = 0; j < grid[i].size(); ++j) {
+  for (int i = 0; i < grid.size(); i++) {
+    for (int j = 0; j < grid[i].size(); j++) {
       // subtract the difference
       if (grid[i][j] != '.') {
         int value = grid[i][j] - '0';
@@ -46,7 +46,6 @@ void print(vvc grid, int diff) {
 int main() {
   int n;
   cin >> n;
-  
   for (int i = 1; i <= n; ++i) {
     int u;
     cin >> u;
@@ -56,22 +55,22 @@ int main() {
     
     // initialize grid
     vvc grid(m);
-    for (int k = 0; k < m; ++k) {
+    for (int k = 0; k < m; k++) {
       vc temp(m);
-      for (int l = 0; l < m; ++l) {
+      for (int l = 0; l < m; l++) {
         temp[l] = '.';
       }
       grid[k] = temp;
     }
     
     vvvc slices;
-    for (int j = 1; j <= m / 2 + 1; ++j) {
+    for (int j = 1; j <= m / 2 + 1; j++) {
       draw(grid, j);
       slices.push_back(grid);
     }
     
     // print the first ones
-    for (int j = 0; j < slices.size() - 1; ++j) {
+    for (int j = 0; j < slices.size() - 1; j++) {
       cout << "slice #" << j + 1 << ":\n";
       print(slices[j], j);
     }
@@ -81,13 +80,11 @@ int main() {
     print(slices[slices.size() - 1], u);
     
     // print the last ones
-    for (int j = slices.size() - 2; j >= 0; --j) {
+    for (int j = slices.size() - 2; j >= 0; j--) {
       cout << "slice #" << 2 * slices.size() - j - 1 << ":\n";
       print(slices[j], j);
     }
-    
     cout << "\n";
   }
-  
   return 0;
 }
