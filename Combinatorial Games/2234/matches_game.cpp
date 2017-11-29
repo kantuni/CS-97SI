@@ -3,23 +3,20 @@
 #include <sstream>
 using namespace std;
 
-typedef unsigned long long ull;
-
 int main() {
   string line;
-  
   while (getline(cin, line)) {
     if (line.size() == 0) {
       continue;
     }
     
     istringstream iss(line);
-    ull m;
+    unsigned long long m;
     iss >> m;
     
-    ull nimsum = 0;
-    for (int i = 0; i < m; ++i) {
-      ull temp;
+    unsigned long long nimsum = 0;
+    for (int i = 0; i < m; i++) {
+      unsigned long long temp;
       iss >> temp;
       nimsum ^= temp;
     }
@@ -30,6 +27,5 @@ int main() {
       cout << "Yes" << "\n";
     }
   }
-  
   return 0;
 }
