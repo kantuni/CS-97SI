@@ -1,22 +1,18 @@
 #include <iostream>
 using namespace std;
 
-typedef long long ll;
-
 int main() {
-  ll N;
+  long long N;
   cin >> N;
-  
-  ll counter = 1;
-  for (ll i = 2; i < N; ++i) {
+  long long counter = 1;
+  for (long long i = 2; i < N; i++) {
     // solution to x + (x + 1) + (x + 2) ... = N, where x > 0
-    ll numerator = 2 * N - i * (i - 1);
-    ll denominator = 2 * i;
-    if (numerator > 0 && numerator % denominator == 0) {
-      ++counter;
+    long long num = 2 * N - i * (i - 1);
+    long long denom = 2 * i;
+    if (num > 0 && num % denom == 0) {
+      counter++;
     }
   }
-  
   cout << counter << "\n";
   return 0;
 }
