@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-typedef long long ull;
+typedef long long ll;
 
-ull reverse(ull x) {
-  ull rx = 0;
+ll reverse(ll x) {
+  ll rx = 0;
   while (x != 0) {
     rx *= 10;
     rx += x % 10;
@@ -13,12 +13,12 @@ ull reverse(ull x) {
   return rx;
 }
 
-ull rsum(ull x, ull y) {
-  ull rx = reverse(x);
-  ull ry = reverse(y);
+ll rsum(ll x, ll y) {
+  ll rx = reverse(x);
+  ll ry = reverse(y);
   
-  ull s = rx + ry;
-  ull rs = reverse(s);
+  ll s = rx + ry;
+  ll rs = reverse(s);
   
   // remove trailing zeroes
   while (rs % 10 == 0) {
@@ -29,14 +29,12 @@ ull rsum(ull x, ull y) {
 }
 
 int main() {
-  ull N;
+  lll N;
   cin >> N;
-  
-  for (ull i = 0; i < N; ++i) {
-    ull x, y;
+  for (ll i = 0; i < N; i++) {
+    ll x, y;
     cin >> x >> y;
     cout << rsum(x, y) << "\n";
   }
-  
   return 0;
 }
