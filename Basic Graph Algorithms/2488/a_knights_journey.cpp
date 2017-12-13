@@ -67,7 +67,7 @@ int main() {
     
     cout << "Scenario #" << t << ":" << "\n";
     if (counter != p * q) {
-      cout << "impossible" << "\n";
+      cout << "impossible\n";
     } else {
       cout << answer << "\n";
     }
