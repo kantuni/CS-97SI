@@ -12,8 +12,9 @@ struct UnionFind {
   UnionFind(int n) {
     parent.assign(n, 0);
     rank.assign(n, 0);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
       parent[i] = i;
+    }
   }
   
   int find(int x) {
