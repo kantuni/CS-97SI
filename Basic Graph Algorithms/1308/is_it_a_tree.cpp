@@ -4,9 +4,7 @@ using namespace std;
 
 int main() {
   set<int> V, S;
-  int E = 0;
-  
-  int i = 1;
+  int E = 0, i = 1;
   bool tree = true;
   
   while (true) {
