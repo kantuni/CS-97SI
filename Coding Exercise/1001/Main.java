@@ -5,7 +5,7 @@ public class Main {
   private static void print(String s) {
     // leading zeros should be suppressed
     int start = 0;
-    for (int i = 0; i < s.length(); ++i) {
+    for (int i = 0; i < s.length(); i++) {
       if (Character.getNumericValue(s.charAt(i)) != 0) {
         start = i;
         break;
@@ -14,7 +14,7 @@ public class Main {
     
     // remove trailing zeroes
     int stop = s.length() - 1;
-    for (int i = s.length() - 1; i >= 0; --i) {
+    for (int i = s.length() - 1; i >= 0; i--) {
       if (Character.getNumericValue(s.charAt(i)) != 0) {
         stop = i;
         break;
