@@ -15,7 +15,7 @@ int main() {
     total = 0.5;
     i = 2;
     while (total < c) {
-      ++i;
+      i++;
       total += 1.0 / i;
     }
 
