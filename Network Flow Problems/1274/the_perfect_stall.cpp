@@ -11,7 +11,7 @@ typedef vector<vi> vvi;
 
 vvi res, cnn;
 vi parent, color;
-int s, t, f;
+int s, t, f, mf;
 
 // augment along s -> t path
 void augment(int v, int minf) {
@@ -35,14 +35,16 @@ int main() {
   
   // super source
   for (int i = 1; i <= N; i++) {
-    res[s][i] = 1; cnn[s].push_back(i);
-    res[i][s] = 0; cnn[i].push_back(s);
+    res[s][i] = 1;
+    cnn[s].push_back(i);
+    cnn[i].push_back(s);
   }
   
   // super sink
   for (int i = N + 1; i <= N + M; i++) {
-    res[i][t] = 1; cnn[i].push_back(t);
-    res[t][i] = 0; cnn[t].push_back(i);
+    res[i][t] = 1;
+    cnn[i].push_back(t);
+    cnn[t].push_back(i);
   }
   
   // in
@@ -50,13 +52,14 @@ int main() {
     int si; cin >> si;
     for (int j = 0; j < si; j++) {
       int sj; cin >> sj;
-      res[i][N + sj] = 1; cnn[i].push_back(N + sj);
-      res[N + sj][i] = 0; cnn[N + sj].push_back(i);
+      res[i][N + sj] = 1;
+      cnn[i].push_back(N + sj);
+      cnn[N + sj].push_back(i);
     }
   }
   
   // Edmonds-Karp's Algorithm
-  int mf = 0;
+  mf = 0;
   while (true) {
     f = 0;
     
