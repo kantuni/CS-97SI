@@ -17,11 +17,11 @@ int main() {
     }
     t[i] = r;
   }
-  for (int i = t.size() - 2; i >= 0; i--) {
+  for (int i = t.size() - 2; i > -1; i--) {
     for (int j = 0; j < t[i].size(); j++) {
       t[i][j] += max(t[i + 1][j], t[i + 1][j + 1]);
     }
   }
-  cout << t[0][0] << "\n";
+  cout << t[0][0] << endl;
   return 0;
 }
