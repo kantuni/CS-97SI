@@ -14,7 +14,7 @@ int main() {
       i++;
       total += 1.0 / i;
     }
-    cout << i - 1 << " card(s)" << "\n";
+    cout << i - 1 << " card(s)" << endl;
   }
   return 0;
 }
