@@ -5,34 +5,28 @@ using namespace std;
 
 int main() {
   string line;
-  
   while (getline(cin, line)) {
     if (line.size() == 0) {
       continue;
     }
-    
     istringstream iss(line);
     string s, t;
     iss >> s >> t;
-    
     if (s.size() > t.size()) {
-      cout << "No" << "\n";
+      cout << "No" << endl;
       continue;
     }
-    
     int i = 0;
     for (int j = 0; j < t.size(); j++) {
       if (s[i] == t[j]) {
         i++;
       }
     }
-    
     if (i == s.size()) {
-      cout << "Yes\n";
+      cout << "Yes" << endl;
     } else {
-      cout << "No\n";
+      cout << "No" << endl;
     }
   }
-  
   return 0;
 }
