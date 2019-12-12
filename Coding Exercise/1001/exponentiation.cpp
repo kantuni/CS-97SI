@@ -29,7 +29,7 @@ string iadd(string a, string b) {
   string result;
   int carry = 0;
   
-  for (int i = a.size() - 1; i >= 0; i--) {
+  for (int i = a.size() - 1; i > -1; i--) {
     int x = a[i] - '0';
     int y = b[i] - '0';
     int sum = x + y + carry;
@@ -64,11 +64,11 @@ string imul(string a, string b) {
   }
   
   string result = "0";
-  for (int i = b.size() - 1; i >= 0; i--) {
+  for (int i = b.size() - 1; i > -1; i--) {
     string temp;
     int carry = 0;
     
-    for (int j = a.size() - 1; j >= 0; j--) {
+    for (int j = a.size() - 1; j > -1; j--) {
       int x = b[i] - '0';
       int y = a[j] - '0';
       int mult = x * y + carry;
@@ -107,7 +107,7 @@ string fmul(string a, string b) {
   int separator = 0;
   
   // find the separator and remove it
-  for (int i = a.size() - 1; i >= 0; i--) {
+  for (int i = a.size() - 1; i > -1; i--) {
     if (a[i] == '.') {
       a = a.substr(0, i) + a.substr(i + 1, a.size());
       break;
@@ -116,7 +116,7 @@ string fmul(string a, string b) {
   }
   
   // find the separator and remove it
-  for (int i = b.size() - 1; i >= 0; i--) {
+  for (int i = b.size() - 1; i > -1; i--) {
     if (b[i] == '.') {
       b = b.substr(0, i) + b.substr(i + 1, b.size());
       break;
@@ -169,7 +169,7 @@ void print(string s) {
   
   // remove trailing zeroes
   int stop = s.size() - 1;
-  for (int i = s.size() - 1; i >= 0; i--) {
+  for (int i = s.size() - 1; i > -1; i--) {
     if (s[i] - '0' != 0) {
       stop = i;
       break;
