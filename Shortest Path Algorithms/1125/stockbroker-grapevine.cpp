@@ -19,18 +19,18 @@ int main() {
     
     // create the adjacency matrix
     vvi D;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
       vi row(n, INF);
       D.push_back(row);
       D[i][i] = 0;
     }
 
     // read input data
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
       int m;
       cin >> m;
       
-      for (int j = 0; j < m; ++j) {
+      for (int j = 0; j < m; j++) {
         int t, c;
         cin >> t >> c;
         D[i][t - 1] = c;
@@ -38,9 +38,9 @@ int main() {
     }
     
     // Floyd-Warshall
-    for (int k = 1; k < n; ++k) {
-      for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
+    for (int k = 1; k < n; k++) {
+      for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
           D[i][j] = min(D[i][j], D[i][k] + D[k][j]);
         }
       }
@@ -50,9 +50,9 @@ int main() {
     bool reachable = true;
     int s, sc = 0;
     
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
       reachable = false;
-      for (int j = 0; i != j && j < n; ++j) {
+      for (int j = 0; i != j && j < n; j++) {
         if (D[j][i] != INF) {
           reachable = true;
           break;
@@ -70,7 +70,7 @@ int main() {
     if (sc > 1) {
       disjoint = true;
     } else if (sc == 1) {
-      for (int i = 0; i != s && i < n; ++i) {
+      for (int i = 0; i != s && i < n; i++) {
         if (D[s][i] == INF) {
           disjoint |= true;
         }
@@ -78,7 +78,7 @@ int main() {
     }
     
     if (disjoint) {
-      cout << "disjoint" << "\n";
+      cout << "disjoint" << endl;
       continue;
     }
     
@@ -87,7 +87,7 @@ int main() {
     int stockbroker;
     int min = INF;
     
-    for (int i = 0; i < D.size(); ++i) {
+    for (int i = 0; i < D.size(); i++) {
       int max = *max_element(D[i].begin(), D[i].end());
       if (max != INF && max < min) {
         min = max;
@@ -96,7 +96,7 @@ int main() {
     }
     
     // output the answer
-    cout << stockbroker + 1 << " " << min << "\n";
+    cout << stockbroker + 1 << " " << min << endl;
   }
   
   return 0;
