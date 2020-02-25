@@ -83,9 +83,9 @@ int main() {
   
   G.Dijkstra(a);
   if (G.dist[b] == INF) {
-    cout << -1 << "\n";
+    cout << -1 << endl;
   } else {
-    cout << G.dist[b] << "\n";
+    cout << G.dist[b] << endl;
   }
   
   return 0;
