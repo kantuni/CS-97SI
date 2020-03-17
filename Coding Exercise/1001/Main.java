@@ -23,7 +23,7 @@ public class Main {
     
     // don't print the decimal point if s is an integer
     if (s.charAt(stop) == '.') {
-      --stop;
+      stop--;
     }
     
     System.out.println(s.substring(start, stop + 1));
