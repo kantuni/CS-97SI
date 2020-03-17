@@ -11,21 +11,18 @@ public class Main {
         break;
       }
     }
-    
     // remove trailing zeroes
     int stop = s.length() - 1;
-    for (int i = s.length() - 1; i >= 0; i--) {
+    for (int i = s.length() - 1; i > -1; i--) {
       if (Character.getNumericValue(s.charAt(i)) != 0) {
         stop = i;
         break;
       }
     }
-    
     // don't print the decimal point if s is an integer
     if (s.charAt(stop) == '.') {
       stop--;
     }
-    
     System.out.println(s.substring(start, stop + 1));
   }
   
