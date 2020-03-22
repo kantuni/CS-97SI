@@ -87,6 +87,6 @@ int main() {
   }
   
   // out
-  cout << mf << "\n";
+  cout << mf << endl;
   return 0;
 }
