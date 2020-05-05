@@ -16,8 +16,7 @@ int main() {
     }
     count++;
   }
-  map<string, int>::iterator it;
-  for (it = trees.begin(); it != trees.end(); it++) {
+  for (map<string, int>::iterator it = trees.begin(); it != trees.end(); it++) {
     cout << it->first << " ";
     cout << fixed << setprecision(4);
     cout << 100.0 * it->second / count << endl;
