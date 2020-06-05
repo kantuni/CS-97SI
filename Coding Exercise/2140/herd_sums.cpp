@@ -2,17 +2,17 @@
 using namespace std;
 
 int main() {
-  long long N;
-  cin >> N;
-  long long counter = 1;
-  for (long long i = 2; i < N; i++) {
-    // solution to x + (x + 1) + (x + 2) ... = N, where x > 0
-    long long num = 2 * N - i * (i - 1);
+  long long n;
+  cin >> n;
+  long long ans = 1;
+  for (long long i = 2; i < n; i++) {
+    // solution to x + (x + 1) + (x + 2) ... = n, where x > 0
+    long long num = 2 * n - i * (i - 1);
     long long denom = 2 * i;
     if (num > 0 && num % denom == 0) {
-      counter++;
+      ans++;
     }
   }
-  cout << counter << "\n";
+  cout << ans << endl;
   return 0;
 }
