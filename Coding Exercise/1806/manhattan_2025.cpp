@@ -18,10 +18,18 @@ void draw(vvc &grid, int current) {
       int last = center + current - 2;
       if (grid[i][j] == '0' + last) {
         // update n, e, s, w
-        if (grid[i + 1][j] == '.') grid[i + 1][j] = '0' + (last + 1);
-        if (grid[i][j + 1] == '.') grid[i][j + 1] = '0' + (last + 1);
-        if (grid[i - 1][j] == '.') grid[i - 1][j] = '0' + (last + 1);
-        if (grid[i][j - 1] == '.') grid[i][j - 1] = '0' + (last + 1);
+        if (grid[i + 1][j] == '.') {
+          grid[i + 1][j] = '0' + (last + 1);
+        }
+        if (grid[i][j + 1] == '.') {
+          grid[i][j + 1] = '0' + (last + 1);
+        }
+        if (grid[i - 1][j] == '.') {
+          grid[i - 1][j] = '0' + (last + 1);
+        }
+        if (grid[i][j - 1] == '.') {
+          grid[i][j - 1] = '0' + (last + 1);
+        }
       }
     }
   }
@@ -37,7 +45,7 @@ void print(vvc grid, int diff) {
       }
       cout << grid[i][j];
     }
-    cout << "\n";
+    cout << endl;
   }
 }
 
@@ -47,7 +55,7 @@ int main() {
   for (int i = 1; i <= n; ++i) {
     int u;
     cin >> u;
-    cout << "Scenario #" << i << ":\n";
+    cout << "Scenario #" << i << ":" << endl;
     int m = 2 * u + 1;
     // initialize grid
     vvc grid(m);
@@ -65,18 +73,18 @@ int main() {
     }
     // print the first ones
     for (int j = 0; j < slices.size() - 1; j++) {
-      cout << "slice #" << j + 1 << ":\n";
+      cout << "slice #" << j + 1 << ":" << endl;
       print(slices[j], j);
     }
     // print the central one
-    cout << "slice #" << slices.size() << ":\n";
+    cout << "slice #" << slices.size() << ":" << endl;
     print(slices[slices.size() - 1], u);
     // print the last ones
     for (int j = slices.size() - 2; j >= 0; j--) {
-      cout << "slice #" << 2 * slices.size() - j - 1 << ":\n";
+      cout << "slice #" << 2 * slices.size() - j - 1 << ":" << endl;
       print(slices[j], j);
     }
-    cout << "\n";
+    cout << endl;
   }
   return 0;
 }
