@@ -14,33 +14,27 @@ int main() {
       }
     }
   }
-  
   while (true) {
     int n;
     cin >> n;
-    
     if (n == 0) {
       break;
     }
-    
     bool found = false;
     int a, b;
-    
     for (int i = 3; i <= n / 2; i++) {
       if (primes[i] && primes[n - i]) {
+        found = true;
         a = i;
         b = n - i;
-        found = true;
         break;
       }
     }
-    
     if (found) {
-      cout << n << " = " << a << " + " << b << "\n";
+      cout << n << " = " << a << " + " << b << endl;
     } else {
-      cout << "Goldbach's conjecture is wrong." << "\n";
+      cout << "Goldbach's conjecture is wrong." << endl;
     }
   }
-  
   return 0;
 }
