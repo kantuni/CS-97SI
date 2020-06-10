@@ -2,12 +2,12 @@
 using namespace std;
 
 long long z(long long n) {
-  long long counter = 0;
+  long long cnt = 0;
   while (n >= 5) {
     n /= 5;
-    counter += n;
+    cnt += n;
   }
-  return counter;
+  return cnt;
 }
 
 int main() {
@@ -16,7 +16,7 @@ int main() {
   for (int i = 0; i < t; i++) {
     long long n;
     cin >> n;
-    cout << z(n) << "\n";
+    cout << z(n) << endl;
   }
   return 0;
 }
