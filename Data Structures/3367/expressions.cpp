@@ -61,7 +61,7 @@ int main() {
       q.pop();
     }
     reverse(answer.begin(), answer.end());
-    cout << answer << "\n";
+    cout << answer << endl;
   }
   return 0;
 }
