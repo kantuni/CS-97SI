@@ -60,7 +60,6 @@ struct Graph {
     int mstc = 0;
     UnionFind set(cnn.size());
     vector<Edge> all(edges);
-    
     sort(all.begin(), all.end());
     for (int i = 0; i < all.size(); i++) {
       Edge e = all[i];
@@ -86,10 +85,8 @@ int main() {
         }
       }
     }
-    
     int ans = G.Kruskal();
-    cout << ans << "\n";
+    cout << ans << endl;
   }
-  
   return 0;
 }
