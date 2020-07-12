@@ -3,15 +3,12 @@
 #include <algorithm>
 using namespace std;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-
 int main() {
   int n;
   cin >> n;
-  vvi t(n);
+  vector<vector<int>> t(n);
   for (int i = 0; i < n; i++) {
-    vi r(i + 1);
+    vector<int> r(i + 1);
     for (int j = 0; j < i + 1; j++) {
       cin >> r[j];
     }
