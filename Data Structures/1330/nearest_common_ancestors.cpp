@@ -11,7 +11,7 @@ int main() {
     cin >> n;
     
     vector<int> anc(n + 2, 0);
-    for (int i = 0; i < n - 1; ++i) {
+    for (int i = 0; i < n - 1; i++) {
       int parent, child;
       cin >> parent >> child;
       anc[child] = parent;
