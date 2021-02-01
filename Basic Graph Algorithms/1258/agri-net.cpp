@@ -26,10 +26,16 @@ struct UnionFind {
   }
   
   void merge(int x, int y) {
-    x = find(x); y = find(y);
-    if (rank[x] > rank[y]) parent[y] = x;
-    else parent[x] = y;
-    if (rank[x] == rank[y]) rank[y]++;
+    x = find(x);
+    y = find(y);
+    if (rank[x] > rank[y]) {
+      parent[y] = x;
+    } else {
+      parent[x] = y;
+    }
+    if (rank[x] == rank[y]) {
+      rank[y]++;
+    }
   }
 };
 
