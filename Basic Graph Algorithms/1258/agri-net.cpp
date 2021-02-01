@@ -57,18 +57,18 @@ struct Graph {
   }
   
   int Kruskal() {
-    int mstc = 0;
+    int cost = 0;
     UnionFind set(cnn.size());
     vector<Edge> all(edges);
     sort(all.begin(), all.end());
     for (int i = 0; i < all.size(); i++) {
       Edge e = all[i];
       if (!set.same(e.from, e.to)) {
-        mstc += e.weight;
+        cost += e.weight;
         set.merge(e.from, e.to);
       }
     }
-    return mstc;
+    return cost;
   }
 };
 
