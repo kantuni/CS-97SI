@@ -19,7 +19,7 @@ int main() {
       A[i] = D[i - 1] + A[i - 2];
       D[i] = D[i - 2] + 2 * A[i - 1];
     }
-    cout << D[n] << "\n";
+    cout << D[n] << endl;
   }
   return 0;
 }
