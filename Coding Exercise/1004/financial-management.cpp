@@ -9,6 +9,6 @@ int main() {
     cin >> balance;
     total += balance;
   }
-  cout << "$" << total / months << endl;
+  cout << "$" << total / months << "\n";
   return 0;
 }
