@@ -5,15 +5,15 @@ import java.util.TreeMap;
 
 class Main {
   private static int sortedness(String s) {
-    int counter = 0;
-    for (int i = 0; i < s.length(); ++i) {
-      for (int j = i + 1; j < s.length(); ++j) {
+    int cnt = 0;
+    for (int i = 0; i < s.length(); i++) {
+      for (int j = i + 1; j < s.length(); j++) {
         if (s.charAt(i) > s.charAt(j)) {
-          ++counter;
+          cnt++;
         }
       }
     }
-    return counter;
+    return cnt;
   }
   
   public static void main(String[] args) {
@@ -24,7 +24,7 @@ class Main {
     Map<Integer, ArrayList<String>> map = new TreeMap<Integer, ArrayList<String>>();
     String[] s = new String[m];
     
-    for (int i = 0; i < m; ++i) {
+    for (int i = 0; i < m; i++) {
       s[i] = scanner.next();
       int points = sortedness(s[i]);
       
