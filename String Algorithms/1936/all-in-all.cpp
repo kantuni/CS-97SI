@@ -13,7 +13,7 @@ int main() {
     string s, t;
     iss >> s >> t;
     if (s.size() > t.size()) {
-      cout << "No" << endl;
+      cout << "No" << "\n";
       continue;
     }
     int i = 0;
@@ -23,9 +23,9 @@ int main() {
       }
     }
     if (i == s.size()) {
-      cout << "Yes" << endl;
+      cout << "Yes" << "\n";
     } else {
-      cout << "No" << endl;
+      cout << "No" << "\n";
     }
   }
   return 0;
